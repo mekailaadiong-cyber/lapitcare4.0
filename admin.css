@@ -1,0 +1,4 @@
+/* admin styles */
+.bt{height:8px;background:var(--bd);border-radius:9px}
+.bt i{display:block;height:100%;border-radius:9px}
+.chart{display:flex;gap:24px;align-items:flex-end;min-height:200px;border-left:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:0 20px}

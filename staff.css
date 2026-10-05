@@ -1,0 +1,11 @@
+/* staff styles */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.g5{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin:16px 0}
+.sg{padding:11px;border-radius:12px;border:1.5px solid var(--bd);background:var(--bg);color:var(--tx);font:600 .9rem Outfit;cursor:pointer}
+.sg.on{border-color:#3b82f6;background:#eaf2ff;color:#2563eb}
+.av2,.av3{border-radius:50%;display:grid;place-items:center;font-weight:700;flex:none}
+.av2{width:50px;height:50px;background:#dbeafe;color:#2563eb}
+.slot{border:2px solid;border-radius:14px;padding:14px;text-align:center;font-weight:600}
+.slot.Available{border-color:#86efac;background:#f0fdf4;color:#16a34a;cursor:pointer}
+.slot.Booked{border-color:#93c5fd;background:#eff6ff;color:#2563eb}
+.slot.Blocked{border-color:#e2e8f0;background:#f8fafc;color:#94a3b8;cursor:pointer}

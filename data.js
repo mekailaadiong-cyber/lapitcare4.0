@@ -1,0 +1,27 @@
+// App state and sample data (replace with API/MySQL calls later)
+const TD=new Date().toISOString().slice(0,10),ad=n=>new Date(Date.now()+n*864e5).toISOString().slice(0,10);
+const stc={Open:'#059669','Limited services':'#f59e0b',Closed:'#dc2626',Emergency:'#059669'};
+const TY={Appointment:['📅','#eef5ff','#dbe8ff'],Emergency:['🚨','#fff0f0','#fecaca'],Resource:['💊','#eefdf3','#bbf7d0'],System:['⚙️','#f1f5f9','#e2e8f0']};
+const BR=['Dao','San Pedro','Lourdes Norte','Tuburan','Balangasan','Gatas','Poblacion'];
+const TM=['8:00 AM','8:30 AM','9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','2:00 PM','2:30 PM','3:00 PM'];
+let S={v:'home',role:null,tab:'clinics',sel:null,q:'',at:'All',ft:'new',nf:'All',pt:'info',ed:0,rt:0,bk:{s:1,c:null,sv:'',d:'',t:'',n:''}};
+const mk=(id,cd,n,sp,ow,sf,ap,rg,st,lat,lng,a,ph,q,w,al,svc,sl)=>({id,cd,n,sp:[sp],ty:sp+' · '+a.split(',')[0],ow,sf,ap,rg,v:rg=='Verified'?1:0,a,ph,em:cd.toLowerCase().slice(0,3)+'@clinic.ph',hr:'Mon–Fri 8:00 AM – 5:00 PM',lat,lng,st,q,w,al,svc,sl,bl:[],dr:'Available'});
+let C=[mk(1,'SGC-2025','Santos General Clinic','General Medicine','Dr. Maria Santos',3,42,'Verified','Open',7.8283,123.4366,'Rizal Ave, Pagadian City','(062) 215-1001',3,15,'',['Consultation','Vaccination','Laboratory'],TM),
+mk(2,'MEC-2025','Mindanao Eye Center','Ophthalmology','Dr. Ramon Ilagan',2,28,'Verified','Emergency',7.8231,123.4412,'Jose Rizal St, Pagadian City','(062) 215-2002',28,90,'High patient volume – expect extended wait times.',['Eye Exam','Consultation'],['8:30 AM','1:00 PM']),
+mk(3,'PSC-2025','Pagadian Skin Clinic','Dermatology','Dr. Leni Cruz',2,35,'Verified','Limited services',7.8325,123.4318,'Gatas District, Pagadian City','(062) 215-3003',7,30,'Reduced staffing today – dermatologist available until 12 PM only.',['Skin Consultation','Acne Treatment'],['10:00 AM','3:00 PM']),
+mk(4,'CWC-2025',"Children's Wellness Clinic",'Pediatrics','Dr. Joy Reyes',4,0,'Pending','Open',7.8352,123.4455,'San Pedro, Pagadian City','(062) 215-4004',0,10,'',['Checkup','Immunization'],['11:00 AM']),
+mk(5,'PHC-2025','Pagadian Heart Center','Cardiology','Dr. Victor Lagura',5,19,'Verified','Closed',7.8195,123.4285,'Balangasan, Pagadian City','(062) 215-5005',0,0,'Closed for facility repair.',['ECG','Cardiac Consultation'],['9:00 AM']),
+mk(6,'OGC-2025','OB-GYN Care Clinic','OB-GYN','Dr. Ana Reyes',2,31,'Suspended','Open',7.8268,123.4339,'Poblacion, Pagadian City','(062) 215-6006',2,20,'',['Prenatal Care','Consultation'],['9:00 AM'])];
+C[0].bl=['11:00 AM','3:00 PM'];
+let U=[{n:'Juan Dela Cruz',e:'juan@email.com',r:'Patient',d:'Sep 10, 2025',a:1},{n:'Rosa Macarambon',e:'rosa@email.com',r:'Patient',d:'Sep 15, 2025',a:1},{n:'Elmer Galvez',e:'elmer@email.com',r:'Patient',d:'Aug 28, 2025',a:1},{n:'Dr. Maria Santos',e:'santos@clinic.com',r:'Clinic Staff',d:'Jul 1, 2025',a:1},{n:'Dr. Leni Cruz',e:'leni@skin.com',r:'Clinic Staff',d:'Jul 15, 2025',a:1},{n:'Carla Montilla',e:'carla@email.com',r:'Patient',d:'Oct 1, 2025',a:0}];
+const ps=(n,e2,a)=>({name:n,email:e2,phone:'09501234567',birth:'1990-05-12',sex:'Male',brgy:'Dao',address:a,since:'2024-02-01'});
+let P={patient:ps('Juan dela Cruz','juan@email.com','123 Rizal St., Barangay Dao, Pagadian City'),staff:ps('Dr. Maria Santos','santos@clinic.com','Rizal Ave, Pagadian City'),admin:ps('Administrator','admin@lapitcare.gov.ph','Pagadian City')};
+let A=[{id:81,c:1,svc:'Hypertension follow-up',date:TD,t:'10:30 AM',me:1,s:'Approved',nt:'',age:34},{id:82,c:1,svc:'Prenatal check-up',date:TD,t:'8:30 AM',pt:'Rosa Macarambon',age:27,s:'Approved'},{id:94,c:1,svc:'Back pain consultation',date:TD,t:'9:00 AM',pt:'Elmer Galvez',age:45,s:'Pending'},{id:95,c:1,svc:'General check-up',date:TD,t:'9:30 AM',pt:'Carla Montilla',age:19,s:'Pending'},{id:72,c:1,svc:'Diabetes monitoring',date:TD,t:'8:00 AM',pt:'Nestor Palo',age:60,s:'Completed'},
+{id:2,c:1,svc:'Laboratory',date:ad(-14),t:'10:30 AM',me:1,s:'Completed',nt:'Fasting blood sugar and CBC.',age:34},{id:3,c:3,svc:'Acne Treatment',date:ad(7),t:'3:00 PM',me:1,s:'Pending',nt:'',age:34},{id:4,c:2,svc:'Eye Exam',date:ad(8),t:'1:00 PM',me:1,s:'Approved',nt:'',age:34}],F=[],nid=100;
+const nowS=()=>new Date().toLocaleString('en-US',{dateStyle:'medium',timeStyle:'short'});
+let N={patient:[{t:'Appointment',h:'Appointment Reminder',m:'You have an appointment at Mindanao Eye Center soon at 1:00 PM for Eye Exam.',d:'Sep 30, 2026 · 08:00 AM',u:1},{t:'Emergency',h:'Emergency Status Alert',m:'Mindanao Eye Center is experiencing high patient volume. Expect extended wait times.',d:'Sep 30, 2026 · 07:00 AM',u:1},{t:'Appointment',h:'Appointment Approved',m:'Your appointment at Santos General Clinic today at 10:30 AM has been approved. Please bring a valid ID.',d:'Sep 29, 2026 · 10:30 AM',u:0},{t:'Resource',h:'Facility Status Update',m:'Pagadian Heart Center is temporarily closed for facility repairs.',d:'Sep 25, 2026 · 02:00 PM',u:0}],
+staff:[{t:'Appointment',h:'New Appointment Request',m:'Elmer Galvez requested Back pain consultation at 9:00 AM.',d:'Sep 30, 2026 · 09:00 AM',u:1}],admin:[{t:'System',h:'Verification Needed',m:"Children's Wellness Clinic is awaiting verification.",d:'Sep 30, 2026 · 09:00 AM',u:1}]};
+const note=(r,t,h,m)=>N[r].unshift({t,h,m,d:nowS(),u:1});
+const taken=(c,t,d)=>A.some(a=>a.c==c&&a.t==t&&a.date==d&&!['Cancelled','Rejected'].includes(a.s));
+const go=(o)=>{Object.assign(S,o);draw()};
+const unread=r=>N[r].filter(n=>n.u).length;

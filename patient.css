@@ -1,0 +1,10 @@
+/* patient styles */
+.hd{display:flex;justify-content:space-between;padding:8px 16px;color:#fff;font-weight:700;font-size:.85rem}
+.ch{display:inline-block;background:color-mix(in srgb,var(--a) 12%,transparent);padding:4px 11px;border-radius:99px;font-size:.85rem;margin:3px 3px 3px 0}
+.al{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;padding:9px 12px;border-radius:10px;margin:8px 0}
+.av{width:80px;height:80px;border-radius:50%;background:var(--a);color:#fff;display:grid;place-items:center;font-size:2rem;font-weight:700}
+.stp{display:flex;gap:18px;flex-wrap:wrap;align-items:center;color:var(--mu);font-weight:600}
+.stp span{display:flex;gap:8px;align-items:center}
+.stp i{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--bd);display:grid;place-items:center}
+.stp .on{color:var(--a)}
+.stp .on i,.stp .dn i{background:var(--a);color:#fff}

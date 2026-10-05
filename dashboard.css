@@ -1,0 +1,18 @@
+/* dashboard styles */
+.bar{background:var(--a);color:#fff}
+.bar .w{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;flex-wrap:wrap;gap:8px}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin:16px 0}
+.tabs button{border:1.5px solid var(--bd);background:var(--card);color:var(--tx);padding:9px 15px;border-radius:99px;font:600 .9rem Outfit;cursor:pointer;white-space:nowrap}
+.tabs button.on{background:var(--a);color:#fff;border-color:var(--a)}
+.bd{display:inline-block;background:#dc2626;color:#fff;border-radius:99px;font-size:.7rem;padding:1px 7px;margin-left:5px}
+.btn.o.r2{color:#dc2626;border-color:#fecaca}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+input:disabled,select:disabled{background:var(--bg);color:var(--mu)}
+.grid4{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.grid2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.av3{width:44px;height:44px;background:var(--a);color:#fff}
+.mono{font-family:monospace;color:var(--mu);font-size:.85rem}
+.pl{padding:5px 14px;border-radius:99px;font-weight:700;font-size:.85rem}
+.btn.s.ok{background:#16a34a}
+.btn.o.gr{color:var(--tx);border-color:var(--bd)}
+.lg{display:inline-block;width:14px;height:14px;border:2px solid;border-radius:4px;vertical-align:middle}

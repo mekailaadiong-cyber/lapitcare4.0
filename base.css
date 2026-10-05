@@ -1,0 +1,27 @@
+/* base styles */
+:root{--bg:#f6f8fb;--card:#fff;--tx:#0f172a;--mu:#64748b;--bd:#e2e8f0;--o:#f97316;--b:#3b82f6;--g:#0d9488;--a:#f97316;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--mu:#94a3b8;--bd:#334155}}
+:root[data-theme=dark]{--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--mu:#94a3b8;--bd:#334155}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Outfit,system-ui,sans-serif}
+.w{max-width:1100px;margin:auto;padding:20px}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;margin:.4em 0}
+h2{margin:.2em 0 .6em;font-size:1.3rem}
+.pill{display:inline-block;border:1px solid #99e6d8;color:var(--g);padding:6px 14px;border-radius:99px;font-weight:600;font-size:.85rem}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1.5px solid var(--bd);border-radius:18px;padding:20px}
+.rc{border-color:color-mix(in srgb,var(--c) 30%,transparent)}
+.rc small{color:var(--c);font-weight:700;letter-spacing:.08em}
+.btn{border:0;border-radius:12px;padding:11px 18px;font:600 .95rem Outfit;cursor:pointer;background:var(--a);color:#fff}
+.btn.o{background:transparent;color:var(--a);border:1.5px solid var(--a)}
+.btn.s{padding:6px 12px;font-size:.82rem}
+.btn.r{background:#dc2626}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+input,select,textarea{width:100%;padding:11px;border:1.5px solid var(--bd);border-radius:10px;font:inherit;background:var(--card);color:var(--tx);margin:4px 0 12px}
+label{font-size:.85rem;font-weight:600;color:var(--mu)}
+.tag{padding:3px 10px;border-radius:99px;font-size:.78rem;font-weight:600;background:color-mix(in srgb,var(--a) 15%,transparent);color:var(--a)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--bd)}
+.mu{color:var(--mu);font-size:.9rem}
+.back{background:none;border:0;color:var(--mu);cursor:pointer;font:inherit;margin-bottom:10px}
+.ov{overflow-x:auto}
+pre{background:#0f172a;color:#cbd5e1;padding:16px;border-radius:12px;font-size:.78rem;overflow-x:auto;line-height:1.5}

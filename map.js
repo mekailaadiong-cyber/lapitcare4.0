@@ -1,0 +1,7 @@
+// Leaflet interactive map
+function mapTab(){const t='map';if(t=='map')return `<div class=grid style="grid-template-columns:2fr 1fr"><div style="position:relative"><div id=map></div><div class=zb><button onclick="M.zoomIn()">+</button><button onclick="M.zoomOut()">−</button></div></div><div class=card id=info>${info()}</div></div><p class=mu>Tiles load from OpenStreetMap when hosted on your own server (XAMPP). Markers show verified clinics.</p>`;
+return ''}
+function info(){const c=C.find(x=>x.id==S.sel);return c?`<b>${e(c.n)}</b><p class=mu>${e(c.ty)}<br>📍 ${e(c.a)}<br>📞 ${c.ph}</p><span class=tag>${c.st}</span><p class=mu>Queue: ${c.q} · ~${c.w}m wait</p>${S.role=='patient'?`<button class=btn onclick="S.bk={s:2,c:${c.id},sv:'',d:'',t:'',n:''};go({tab:'book'})">Book here</button>`:''}`:'<p class=mu>Tap a marker to see clinic details.</p>'}
+let M;function initMap(){const el=document.getElementById('map');if(!el||!window.L)return;M=L.map(el,{zoomControl:false,zoomAnimation:false,fadeAnimation:false}).setView([7.8257,123.437],14);
+if(S.sel){const c=C.find(x=>x.id==S.sel);M.setView([c.lat,c.lng],16)}try{L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(M)}catch(x){}
+C.filter(c=>c.v).forEach(c=>L.marker([c.lat,c.lng],{icon:L.divIcon({html:'<div class=pin></div>',className:'',iconSize:[22,22],iconAnchor:[11,22]})}).addTo(M).on('click',()=>{S.sel=c.id;document.getElementById('info').innerHTML=info()}))}

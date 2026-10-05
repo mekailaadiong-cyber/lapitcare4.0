@@ -1,0 +1,14 @@
+/* loginPage styles */
+.au{display:grid;grid-template-columns:minmax(300px,32%) 1fr;min-height:100vh}
+.au-l{color:#fff;padding:28px;display:flex;flex-direction:column}
+.au-l .bk{cursor:pointer;opacity:.95}
+.aui{display:grid;place-items:center;width:60px;height:60px;border-radius:16px;background:#fff3;font-size:1.6rem;margin-top:36px}
+.ck{width:26px;height:26px;border-radius:50%;background:#fff3;display:grid;place-items:center;flex:none;font-size:.8rem}
+.scope{background:#fff2;border-radius:20px;padding:20px;line-height:2}
+.au-r{display:grid;place-items:center;padding:24px}
+.ac{background:#fff;color:#0f172a;border-radius:28px;padding:34px;width:100%;max-width:560px;box-shadow:0 12px 40px #0001}
+.eb{color:var(--a);font-weight:700;letter-spacing:.1em}
+.lk{color:var(--a);font-weight:600;text-decoration:none}
+.eye{position:absolute;right:12px;top:14px;border:0;background:none;cursor:pointer}
+.rb{display:flex;gap:12px;background:#e6faf6;border:1px solid #99e6d8;color:#0f766e;border-radius:14px;padding:14px;margin-bottom:18px}
+@media(max-width:800px){.au{grid-template-columns:1fr}}
